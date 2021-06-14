@@ -1,3 +1,21 @@
 <resources>
-    <string name="app_name">Pathfinding Visualizer</string>
+    <string name="app_name">Path Finder</string>
+    <string name="solveBfs">BFS</string>
+    <string name="solveDfs">DFS</string>
+    <string name="reset">RESET</string>
+    <string name="speed">Speed : </string>
+    <string name="algorithm">Algorithm :</string>
+    <string name="solve">SOLVE</string>
+
+    <string-array name="speed_array">
+        <item>Fast</item>
+        <item>Avg.</item>
+        <item>Slow</item>
+    </string-array>
+
+    <string-array name="algo_array">
+    <item>BFS</item>
+    <item>DFS</item>
+    </string-array>
 </resources>
+

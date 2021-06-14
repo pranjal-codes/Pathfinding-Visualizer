@@ -1,18 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#333333"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
     tools:context=".MainActivity">
 
-    <TextView
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:minHeight="?android:attr/actionBarSize"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/open_sans_light"
+            android:text="@string/app_name"
+            android:textSize="24sp" />
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/pathGrid"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_top">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:fontFamily="@font/open_sans_light"
+            android:text="@string/algorithm"
+            android:textAllCaps="false"
+            android:textColor="#EAEAEA"
+            android:textSize="15sp" />
+
+        <Spinner
+            android:id="@+id/algo_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:popupBackground="#2C2C2C"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_top" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/pathGrid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_top">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:fontFamily="@font/open_sans_light"
+            android:text="@string/speed"
+            android:textAllCaps="false"
+            android:textColor="#EAEAEA"
+            android:textSize="15sp" />
+
+        <Spinner
+            android:id="@+id/speed_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:popupBackground="#2C2C2C"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_top" />
+
+
+    </LinearLayout>
+
+
+    <com.example.pathfindingvisualizer.pathBoard.PathGrid
+        android:id="@+id/pathGrid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:exploreColor="#CBFFBE85"
+        app:exploreHeadColor="#0494DA"
+        app:finalPathColor="#CBC6FF00"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_top"
+        custom:endColor="#CBB6350E"
+        custom:gridColor="#DFBF9C"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toTopOf="parent"
+        custom:obstacleColor="#636363"
+        custom:startColor="#CB04ADFF" />
+
+    <Button
+        android:id="@+id/btn_solve"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/open_sans_light"
+        android:text="@string/solve"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+        android:textColor="@drawable/button_text_color"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pathGrid"
+        app:rippleColor="#FFECB3"
+        app:strokeColor="#6E6E6E"
+        custom:layout_constraintBottom_toBottomOf="parent" />
+
+    <Button
+        android:id="@+id/btn_reset"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/open_sans_light"
+        android:text="@string/reset"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+        android:textColor="@drawable/button_text_color"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_solve"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:rippleColor="#FFECB3"
+        app:strokeColor="#6E6E6E" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

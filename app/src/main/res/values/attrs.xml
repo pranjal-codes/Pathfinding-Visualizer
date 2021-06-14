@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PathGrid">
+        <attr name="gridColor" format="color" />
+        <attr name="obstacleColor" format="color" />
+        <attr name="startColor" format="color" />
+        <attr name="endColor" format="color" />
+        <attr name="exploreColor" format="color" />
+        <attr name="exploreHeadColor" format="color" />
+        <attr name="finalPathColor" format="color" />
+    </declare-styleable>
+</resources>
