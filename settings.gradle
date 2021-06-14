@@ -1,0 +1,2 @@
+rootProject.name = "Pathfinding Visualizer"
+include ':app'
