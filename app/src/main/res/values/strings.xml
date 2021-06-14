@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Path Finder</string>
+    <string name="app_name">Pathfinding Visualizer</string>
     <string name="solveBfs">BFS</string>
     <string name="solveDfs">DFS</string>
     <string name="reset">RESET</string>
@@ -14,8 +14,8 @@
     </string-array>
 
     <string-array name="algo_array">
-    <item>BFS</item>
-    <item>DFS</item>
+        <item>BFS</item>
+        <item>DFS</item>
     </string-array>
 </resources>
 

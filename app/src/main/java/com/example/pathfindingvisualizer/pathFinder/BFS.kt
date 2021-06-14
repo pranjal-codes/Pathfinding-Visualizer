@@ -1,5 +1,3 @@
-package com.example.path.pathFinder
-
 import com.example.pathfindingvisualizer.pathFinder.PathFinder
 import kotlinx.coroutines.delay
 import java.util.*

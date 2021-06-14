@@ -1,11 +1,11 @@
 package com.example.pathfindingvisualizer
 
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Gravity
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import com.example.pathfindingvisualizer.pathBoard.PathGrid
 import com.example.pathfindingvisualizer.pathFinder.PathFinder
 import kotlinx.coroutines.Dispatchers
@@ -33,8 +33,14 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         val btnReset = findViewById<Button>(R.id.btn_reset)
 
         btnSolve.setOnClickListener {
+
+            // setting solving status to true , so that
+            // user can't manipulate the gird while opeartions
             pathGrid.setSolving(true)
 
+
+            //Since UI needs to be updated and work is less,
+            //performing the operation in Main Thread
             GlobalScope.launch(Dispatchers.Main) {
 
                 btnSolve.isEnabled = false
@@ -75,12 +81,12 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     private fun makeToast(found: Boolean) {
         if (found) {
             val toast = Toast.makeText(this@MainActivity, "Path Found.", Toast.LENGTH_SHORT)
-            toast.setGravity(Gravity.BOTTOM,0, -200)
-            toast. show()
+            toast.setGravity(Gravity.BOTTOM, 0, -200)
+            toast.show()
         } else {
             val toast = Toast.makeText(this@MainActivity, "No Path Found.", Toast.LENGTH_SHORT)
-            toast.setGravity(Gravity.BOTTOM,0, -200)
-            toast. show()
+            toast.setGravity(Gravity.BOTTOM, 0, -200)
+            toast.show()
         }
     }
 

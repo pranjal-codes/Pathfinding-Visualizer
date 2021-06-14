@@ -9,7 +9,6 @@ import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
-import com.example.pathfindingvisualizer.pathFinder.PathFinder.Companion.OBSTACLE_CELL_CODE
 import com.example.pathfindingvisualizer.R
 import com.example.pathfindingvisualizer.pathFinder.PathFinder
 import com.example.pathfindingvisualizer.pathFinder.PathFinder.Companion.EMPTY_CELL_CODE
@@ -17,6 +16,7 @@ import com.example.pathfindingvisualizer.pathFinder.PathFinder.Companion.END_CEL
 import com.example.pathfindingvisualizer.pathFinder.PathFinder.Companion.EXPLORE_CELL_CODE
 import com.example.pathfindingvisualizer.pathFinder.PathFinder.Companion.EXPLORE_HEAD_CELL_CODE
 import com.example.pathfindingvisualizer.pathFinder.PathFinder.Companion.FINAL_PATH_CELL_CODE
+import com.example.pathfindingvisualizer.pathFinder.PathFinder.Companion.OBSTACLE_CELL_CODE
 import com.example.pathfindingvisualizer.pathFinder.PathFinder.Companion.START_CELL_CODE
 import kotlin.math.abs
 import kotlin.math.ceil
@@ -236,7 +236,7 @@ class PathGrid(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
                     _finder.obstacleX = x
                     _finder.obstacleY = y
                     _finder.board[y][x] = OBSTACLE_CELL_CODE
-                } else if(_finder.board[y][x] == OBSTACLE_CELL_CODE){
+                } else if (_finder.board[y][x] == OBSTACLE_CELL_CODE) {
                     _finder.obstacleX = x
                     _finder.obstacleY = y
                     _finder.board[y][x] = EMPTY_CELL_CODE

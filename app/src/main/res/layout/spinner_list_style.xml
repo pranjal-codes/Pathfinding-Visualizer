@@ -6,7 +6,7 @@
     android:layout_height="45dp"
     android:ellipsize="marquee"
     android:fontFamily="@font/open_sans_light"
-    android:textSize="15sp"
-    android:textStyle="bold"
     android:singleLine="true"
-    android:textColor="#FFFFFF" />
+    android:textColor="#FFFFFF"
+    android:textSize="15sp"
+    android:textStyle="bold" />

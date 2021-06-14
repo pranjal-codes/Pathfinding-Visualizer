@@ -1,7 +1,7 @@
 package com.example.pathfindingvisualizer.pathFinder
 
-import com.example.path.pathFinder.BFS
-import com.example.path.pathFinder.DFS
+import BFS
+import DFS
 import kotlinx.coroutines.delay
 
 class PathFinder {
@@ -52,7 +52,7 @@ class PathFinder {
         board[1][1] = START_CELL_CODE //for Start
         board[8][8] = OBSTACLE_CELL_CODE //for obstacle
         board[15][15] = END_CELL_CODE //for End
-        clearCells()
+//        clearCells()
     }
 
     suspend fun solveBFS(speed: Long): Boolean {
@@ -68,16 +68,18 @@ class PathFinder {
 
         val dfs = DFS(rows, cols)
         dfs.solve(speed, startX, startY, endX, endY, board)
-
         return drawSolution(dfs.getPath())
 
     }
 
+    /*
+    *this function traces back the path
+    */
     private suspend fun drawSolution(path: Array<CharArray>): Boolean {
         var i = endX
         var j = endY
 
-        if(path[j][i]=='O') return false
+        if (path[j][i] == 'O') return false
         while (path[j][i] != 'O') {
             delay(20)
             when {
@@ -99,6 +101,10 @@ class PathFinder {
         return true
     }
 
+
+    /*
+    * Clears the cell to it's default state
+    * */
     private fun clearCells() {
         for (i in 1..15) {
             for (j in 1..15) {
