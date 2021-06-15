@@ -1,5 +1,5 @@
 # Pathfinding-Visualizer
-An Android application which visualizes some of the famous Algorithms for shortest path from Source to destination on a 2D grid.
+An Android application which visualizes some of the famous Algorithms from Source to destination in a 2D grid.
 
 ## Instructions
 BLUE cell is Source (Draggable).
