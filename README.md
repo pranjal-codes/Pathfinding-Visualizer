@@ -14,5 +14,5 @@ You can add/remove obstacles in the grid by touching and dragging.
 ## Notable Components
 - Canvas
 - Custom Views
-- Kotlin Couroutines
+- Kotlin Coroutines
 - Material Design
